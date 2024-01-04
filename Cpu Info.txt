@@ -1,0 +1,42 @@
+pirate-960@LAPTOP-E7JFSRDV:~/Project (3)$ lscpu
+Architecture:            x86_64
+  CPU op-mode(s):        32-bit, 64-bit
+  Address sizes:         39 bits physical, 48 bits virtual
+  Byte Order:            Little Endian
+CPU(s):                  8
+  On-line CPU(s) list:   0-7
+Vendor ID:               GenuineIntel
+  Model name:            Intel(R) Core(TM) i7-10510U CPU @ 1.80GHz
+    CPU family:          6
+    Model:               142
+    Thread(s) per core:  2
+    Core(s) per socket:  4
+    Socket(s):           1
+    Stepping:            12
+    BogoMIPS:            4608.01
+    Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon rep_good nopl xtopology cpuid pni pclmulqdq vmx 
+                         ssse3 fma cx16 pdcm pcid sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi ept vpid ept_ad fsgsbase b
+                         mi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt xsaveopt xsavec xgetbv1 xsaves flush_l1d arch_capabilities
+Virtualization features: 
+  Virtualization:        VT-x
+  Hypervisor vendor:     Microsoft
+  Virtualization type:   full
+Caches (sum of all):     
+  L1d:                   128 KiB (4 instances)
+  L1i:                   128 KiB (4 instances)
+  L2:                    1 MiB (4 instances)
+  L3:                    8 MiB (1 instance)
+Vulnerabilities:         
+  Gather data sampling:  Unknown: Dependent on hypervisor status
+  Itlb multihit:         KVM: Mitigation: VMX disabled
+  L1tf:                  Not affected
+  Mds:                   Not affected
+  Meltdown:              Not affected
+  Mmio stale data:       Vulnerable: Clear CPU buffers attempted, no microcode; SMT Host state unknown
+  Retbleed:              Mitigation; Enhanced IBRS
+  Spec rstack overflow:  Not affected
+  Spec store bypass:     Mitigation; Speculative Store Bypass disabled via prctl and seccomp
+  Spectre v1:            Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+  Spectre v2:            Mitigation; Enhanced IBRS, IBPB conditional, RSB filling, PBRSB-eIBRS SW sequence
+  Srbds:                 Unknown: Dependent on hypervisor status
+  Tsx async abort:       Not affected

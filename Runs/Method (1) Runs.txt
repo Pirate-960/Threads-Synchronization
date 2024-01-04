@@ -1,0 +1,139 @@
+===================================================================================================================
+pirate-960@LAPTOP-E7JFSRDV:~/Project (3)$ gcc Code_#.c -o Code_#.o -lm -pthread
+===================================================================================================================
+pirate-960@LAPTOP-E7JFSRDV:~/Project (3)$ time ./Code_#.o 880130203012 922823372203 1 1
+Main Thread ID: 139940661987136
+Method: 1
+Number of Threads: 1
+
+Step 1: Creating and launching threads...
+  Creating Thread 1 with ID 139940661987136 -> [880130203012, 922823372203]
+
+Step 2: Joining threads...
+  #=>Thread ID 139940661982784 calculating sqrt sum for range [880130203012, 922823372203]
+###===>>>Thread ID 139940661982784 updated global_sqrt_sum without mutex. Final local_sqrt_sum = 4.053457e+16
+(!): Thread ID 139940661982784 joined. Method: 1, Range: [880130203012, 922823372203]
+
+Results:
+Sum: 4.053457e+16
+User time: 122.1255 seconds
+System time: 122.1255 seconds
+Total time: 122.1255 seconds
+
+real    2m2.129s
+user    2m1.809s
+sys     0m0.311s
+===================================================================================================================
+pirate-960@LAPTOP-E7JFSRDV:~/Project (3)$ time ./Code_#.o 880130203012 922823372203 2 1
+Main Thread ID: 140715026134848
+Method: 1
+Number of Threads: 2
+
+Step 1: Creating and launching threads...
+  Creating Thread 1 with ID 140715026134848 -> [880130203012, 901476787607]
+  Creating Thread 2 with ID 140715026134848 -> [901476787607, 922823372203]
+
+Step 2: Joining threads...
+  #=>Thread ID 140715026130496 calculating sqrt sum for range [880130203012, 901476787607]
+###===>>>Thread ID 140715026130496 updated global_sqrt_sum without mutex. Final local_sqrt_sum = 2.325801e+16
+(!): Thread ID 140715026130496 joined. Method: 1, Range: [880130203012, 901476787607]
+  #=>Thread ID 140715017737792 calculating sqrt sum for range [901476787607, 922823372203]
+###===>>>Thread ID 140715017737792 updated global_sqrt_sum without mutex. Final local_sqrt_sum = 2.363931e+16
+(!): Thread ID 140715017737792 joined. Method: 1, Range: [901476787607, 922823372203]
+
+Results:
+Sum: 2.363931e+16
+User time: 192.3421 seconds
+System time: 192.3421 seconds
+Total time: 192.3421 seconds
+
+real    3m12.345s
+user    6m22.872s
+sys     0m0.791s
+===================================================================================================================
+pirate-960@LAPTOP-E7JFSRDV:~/Project (3)$ time ./Code_#.o 880130203012 922823372203 4 1
+Main Thread ID: 139723729332032
+Method: 1
+Number of Threads: 4
+
+Step 1: Creating and launching threads...
+  Creating Thread 1 with ID 139723729332032 -> [880130203012, 890803495309]
+  Creating Thread 2 with ID 139723729332032 -> [890803495309, 901476787606]
+  Creating Thread 3 with ID 139723729332032 -> [901476787606, 912150079903]
+  Creating Thread 4 with ID 139723729332032 -> [912150079903, 922823372203]
+
+Step 2: Joining threads...
+  #=>Thread ID 139723712542272 calculating sqrt sum for range [901476787606, 912150079903]
+###===>>>Thread ID 139723712542272 updated global_sqrt_sum without mutex. Final local_sqrt_sum = 1.197897e+16
+  #=>Thread ID 139723704149568 calculating sqrt sum for range [912150079903, 922823372203]
+###===>>>Thread ID 139723704149568 updated global_sqrt_sum without mutex. Final local_sqrt_sum = 1.199002e+16
+  #=>Thread ID 139723720934976 calculating sqrt sum for range [890803495309, 901476787606]
+###===>>>Thread ID 139723720934976 updated global_sqrt_sum without mutex. Final local_sqrt_sum = 1.212924e+16
+  #=>Thread ID 139723729327680 calculating sqrt sum for range [880130203012, 890803495309]
+###===>>>Thread ID 139723729327680 updated global_sqrt_sum without mutex. Final local_sqrt_sum = 1.219876e+16
+(!): Thread ID 139723729327680 joined. Method: 1, Range: [880130203012, 890803495309]
+(!): Thread ID 139723720934976 joined. Method: 1, Range: [890803495309, 901476787606]
+(!): Thread ID 139723712542272 joined. Method: 1, Range: [901476787606, 912150079903]
+(!): Thread ID 139723704149568 joined. Method: 1, Range: [912150079903, 922823372203]
+
+Results:
+Sum: 1.219876e+16
+User time: 235.4160 seconds
+System time: 235.4160 seconds
+Total time: 235.4160 seconds
+
+real    3m55.419s
+user    15m36.440s
+sys     0m1.713s
+===================================================================================================================
+pirate-960@LAPTOP-E7JFSRDV:~/Project (3)$ time ./Code_#.o 880130203012 922823372203 8 1
+Main Thread ID: 140319358281536
+Method: 1
+Number of Threads: 8
+
+Step 1: Creating and launching threads...
+  Creating Thread 1 with ID 140319358281536 -> [880130203012, 885466849160]
+  Creating Thread 2 with ID 140319358281536 -> [885466849160, 890803495308]
+  Creating Thread 3 with ID 140319358281536 -> [890803495308, 896140141456]
+  Creating Thread 4 with ID 140319358281536 -> [896140141456, 901476787604]
+  Creating Thread 5 with ID 140319358281536 -> [901476787604, 906813433752]
+  Creating Thread 6 with ID 140319358281536 -> [906813433752, 912150079900]
+  Creating Thread 7 with ID 140319358281536 -> [912150079900, 917486726048]
+  Creating Thread 8 with ID 140319358281536 -> [917486726048, 922823372203]
+
+Step 2: Joining threads...
+  #=>Thread ID 140319114909248 calculating sqrt sum for range [906813433752, 912150079900]
+###===>>>Thread ID 140319114909248 updated global_sqrt_sum without mutex. Final local_sqrt_sum = 6.901516e+15
+  #=>Thread ID 140319131694656 calculating sqrt sum for range [896140141456, 901476787604]
+###===>>>Thread ID 140319131694656 updated global_sqrt_sum without mutex. Final local_sqrt_sum = 6.934389e+15
+  #=>Thread ID 140319106516544 calculating sqrt sum for range [912150079900, 917486726048]
+###===>>>Thread ID 140319106516544 updated global_sqrt_sum without mutex. Final local_sqrt_sum = 6.990361e+15
+  #=>Thread ID 140319349884480 calculating sqrt sum for range [885466849160, 890803495308]
+###===>>>Thread ID 140319349884480 updated global_sqrt_sum without mutex. Final local_sqrt_sum = 6.999577e+15
+  #=>Thread ID 140319358277184 calculating sqrt sum for range [880130203012, 885466849160]
+###===>>>Thread ID 140319358277184 updated global_sqrt_sum without mutex. Final local_sqrt_sum = 7.067077e+15
+(!): Thread ID 140319358277184 joined. Method: 1, Range: [880130203012, 885466849160]
+(!): Thread ID 140319349884480 joined. Method: 1, Range: [885466849160, 890803495308]
+  #=>Thread ID 140319123301952 calculating sqrt sum for range [901476787604, 906813433752]
+###===>>>Thread ID 140319123301952 updated global_sqrt_sum without mutex. Final local_sqrt_sum = 7.150526e+15
+  #=>Thread ID 140319098123840 calculating sqrt sum for range [917486726048, 922823372203]
+###===>>>Thread ID 140319098123840 updated global_sqrt_sum without mutex. Final local_sqrt_sum = 7.186880e+15
+  #=>Thread ID 140319341491776 calculating sqrt sum for range [890803495308, 896140141456]
+###===>>>Thread ID 140319341491776 updated global_sqrt_sum without mutex. Final local_sqrt_sum = 7.236127e+15
+(!): Thread ID 140319341491776 joined. Method: 1, Range: [890803495308, 896140141456]
+(!): Thread ID 140319131694656 joined. Method: 1, Range: [896140141456, 901476787604]
+(!): Thread ID 140319123301952 joined. Method: 1, Range: [901476787604, 906813433752]
+(!): Thread ID 140319114909248 joined. Method: 1, Range: [906813433752, 912150079900]
+(!): Thread ID 140319106516544 joined. Method: 1, Range: [912150079900, 917486726048]
+(!): Thread ID 140319098123840 joined. Method: 1, Range: [917486726048, 922823372203]
+
+Results:
+Sum: 7.236127e+15
+User time: 240.7234 seconds
+System time: 240.7234 seconds
+Total time: 240.7234 seconds
+
+real    4m0.726s
+user    29m29.591s
+sys     0m48.498s
+===================================================================================================================
