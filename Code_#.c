@@ -6,8 +6,8 @@
 #include <time.h>
 #include <stdint.h>
 
-#define MAX_THREADS 32
-
+#define MAX_THREADS 32 // This Value can be changed (for project purposes)!
+#define MAX_VALUE 9223372036854775807LL // Maximum signed long long value
 // Shared variables
 double global_sqrt_sum = 0;
 long long int a, b;
@@ -42,6 +42,29 @@ int main(int argc, char *argv[]) {
     b = atoll(argv[2]);
     num_threads = atoi(argv[3]);
     method = atoi(argv[4]);
+    
+    // Validate input values
+    if (a > b) {
+        fprintf(stderr, "'a' must be less than or equal to 'b'. Given '%lld', which is greater than '%lld'.\n", a, b);
+        fprintf(stderr, "Usage: %s <a> <b> <num_threads> <method>\n", argv[0]);
+        exit(EXIT_FAILURE);
+    }
+
+    // In Case a value is negative or exceed the limit
+    if (a < 0 || a > MAX_VALUE) {
+        fprintf(stderr, "Invalid Input for 'b': %lld\n", b);
+        fprintf(stderr, "Invalid range. 'a' and 'b' must be non-negative and within the range [0, %lld]. 'a' must also be smaller or equal to 'b'.\n", MAX_VALUE);
+        fprintf(stderr, "Usage: %s <a> <b> <num_threads> <method>\n", argv[0]);
+        exit(EXIT_FAILURE);
+    }
+    
+    // In Case b value is negative or exceed the limit
+    if (b < 0 || b > MAX_VALUE) {
+        fprintf(stderr, "Invalid Input for 'b': %lld\n", b);
+        fprintf(stderr, "Invalid range. 'a' and 'b' must be non-negative and within the range [0, %lld]. 'a' must also be smaller or equal to 'b'.\n", MAX_VALUE);
+        fprintf(stderr, "Usage: %s <a> <b> <num_threads> <method>\n", argv[0]);
+        exit(EXIT_FAILURE);
+    }
 
     // Validate the number of threads
     if (num_threads <= 0 || num_threads > MAX_THREADS) {
@@ -211,6 +234,7 @@ void* method3_worker(void* arg) {
     printf("###===>>>Thread ID %lu local_sqrt_sum = %e\n", (unsigned long)pthread_self(), local_sum);
 
     // Update global sum only once after local computations are complete
+    // Using mutex for protection (safeguard global sum)
     pthread_mutex_lock(&mutex);
     global_sqrt_sum += local_sum;
     pthread_mutex_unlock(&mutex);
