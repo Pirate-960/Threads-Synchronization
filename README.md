@@ -6,4 +6,4 @@
 - Usage: ./Code_#.o <a> <b> <num_threads> <method>
 - ./Code_#.o 880130203012 922823372203 1 1
 - time ./Code_#.o 880130203012 922823372203 1 1
-Thank you!
+- Thank you!
