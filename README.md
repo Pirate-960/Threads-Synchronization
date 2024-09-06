@@ -60,5 +60,6 @@ Method 3: Achieves the best balance between performance and accuracy by allowing
 Dependencies:
 PThread Library: Required for handling multithreading.
 Math Library: Required for square root calculations.
-Thank You!
+
+## Thank You!
 Thank you for trying out the Threads-Synchronization project! If you have any questions, suggestions, or improvements, feel free to reach out. We hope this project helps you gain a deeper understanding of threading and synchronization concepts in concurrent programming.
