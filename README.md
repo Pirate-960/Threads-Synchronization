@@ -20,8 +20,9 @@ To run this project, follow these steps:
 Use the following command to compile the C code with the necessary libraries:
 ```bash
 gcc Code_#.c -o Code_#.o -lm -pthread
-This command includes the math and pthread libraries needed for multithreading and square root calculations.
 ```
+This command includes the math and pthread libraries needed for multithreading and square root calculations.
+
 Step 2: Execute the Program
 Once compiled, execute the program with the following command format:
 
