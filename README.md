@@ -23,12 +23,12 @@ gcc Code_#.c -o Code_#.o -lm -pthread
 ```
 This command includes the math and pthread libraries needed for multithreading and square root calculations.
 
-Step 2: Execute the Program
+### Step 2: Execute the Program
 Once compiled, execute the program with the following command format:
 
-bash
-Copy code
+```
 ./Code_#.o <start_range> <end_range> <num_threads> <method>
+```
 Where:
 
 start_range: The starting point of the range (e.g., 880130203012).
