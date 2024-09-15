@@ -1,80 +1,122 @@
-# Threads-Synchronization
+<h1 align="center">🧵 Threads-Synchronization</h1>
 
-Welcome to the **Threads-Synchronization** project! This program is designed to efficiently compute the sum of square roots within a specified range using multithreading in C, employing various synchronization methods to ensure both accuracy and speed.
+<p align="center">
+  <img src="https://img.shields.io/badge/language-C-blue?style=for-the-badge&logo=c" alt="C">
+  <img src="https://img.shields.io/badge/feature-Multithreading-orange?style=for-the-badge&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJTUUH4QQQEwksSS9ZWwAAAk1JREFUSMedlEuT0zAQhN+M7JiK7iBPUxPiuYgDJFZyjULIqRKpIjf2hVcUXBlXDrD3gg7Eefqu/PrSpwMlHnjWF/VueQRjG89SOqqpd2j/AEZg1jsCwAKIX+dFS43DdxvAYCGiTwJp+LZJpmzgpffauxLC4hLFPcmBLOqnjTF64+yjAUExEZBlccgir+mqRKZb/Ab2VAhSSVe37DOu4G4+qwCOS5aO7J+Kg+vE8M+5RBq4liZVlpqUVpwue0r4Dh6dZMsVi6gL/8ooKKXnoCkwrQYf9zM6s7kjLnEp/Qre+2LoofESRHdIFKxFu30RC9cGYUXyJHv3xafLuIGxBWjF3KO+SC+krmv3c7F9QQ2b65kQ25odIC0S2oa+wV4KXzszZC7XvqnLCa6b5QYZFW4fRgt9m5JulwSpHACySWFhvKtEGIPSMXHm+rt7NWprRhOA3LoD88S0CMvueT4pglWCqBgP4jsxO1ErMQVfewZRR+yTlCrWE3ba9CWrhz6gm5Fsx2GCvNhbI39xcnlLVK8HmkBJ+kRilLz4LpS1AGr6FUAX1Mq8hAh1sAMVBfYJ70EyKnK/5M9oFvSzRBQAem6Y7QcfIWXCLaOSRgS0n0XFPQ0vqEE6Ki3AFCBDLmzDFQ98dX3xffv+StELV7uq3yrJRWGXTzzeTfd++FE73+EH9BvuAM1Bo+9/CszSBKb6Q5wAAAAASUVORK5CYII=" alt="Multithreading">
+  <img src="https://img.shields.io/badge/library-PThread-green?style=for-the-badge&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJTUUH4QQQEwksSS9ZWwAAAk1JREFUSMedlEuT0zAQhN+M7JiK7iBPUxPiuYgDJFZyjULIqRKpIjf2hVcUXBlXDrD3gg7Eefqu/PrSpwMlHnjWF/VueQRjG89SOqqpd2j/AEZg1jsCwAKIX+dFS43DdxvAYCGiTwJp+LZJpmzgpffauxLC4hLFPcmBLOqnjTF64+yjAUExEZBlccgir+mqRKZb/Ab2VAhSSVe37DOu4G4+qwCOS5aO7J+Kg+vE8M+5RBq4liZVlpqUVpwue0r4Dh6dZMsVi6gL/8ooKKXnoCkwrQYf9zM6s7kjLnEp/Qre+2LoofESRHdIFKxFu30RC9cGYUXyJHv3xafLuIGxBWjF3KO+SC+krmv3c7F9QQ2b65kQ25odIC0S2oa+wV4KXzszZC7XvqnLCa6b5QYZFW4fRgt9m5JulwSpHACySWFhvKtEGIPSMXHm+rt7NWprRhOA3LoD88S0CMvueT4pglWCqBgP4jsxO1ErMQVfewZRR+yTlCrWE3ba9CWrhz6gm5Fsx2GCvNhbI39xcnlLVK8HmkBJ+kRilLz4LpS1AGr6FUAX1Mq8hAh1sAMVBfYJ70EyKnK/5M9oFvSzRBQAem6Y7QcfIWXCLaOSRgS0n0XFPQ0vqEE6Ki3AFCBDLmzDFQ98dX3xffv+StELV7uq3yrJRWGXTzzeTfd++FE73+EH9BvuAM1Bo+9/CszSBKb6Q5wAAAAASUVORK5CYII=" alt="PThread">
+</p>
 
-## Project Overview
+<p align="center">
+  <i>Efficient multithreaded computation of square root sums with advanced synchronization methods</i>
+</p>
 
-This project demonstrates the power of threading and synchronization in concurrent programming. By utilizing the PThread library, the program can distribute tasks across multiple threads, improving performance while ensuring proper synchronization.
+---
 
-### Features
+## 📌 Table of Contents
+- [Project Overview](#-project-overview)
+- [Features](#-features)
+- [Requirements](#-requirements)
+- [Compilation](#-compilation)
+- [Usage](#-usage)
+- [Synchronization Methods](#-synchronization-methods)
+- [Performance Insights](#-performance-insights)
+- [Limitations](#-limitations)
+- [Contributing](#-contributing)
 
-- **Multithreaded Execution:** Speed up calculations using multiple threads.
-- **Synchronization Methods:** Choose from three distinct methods for handling shared resources:
-  1. **No synchronization** – High risk of race conditions.
-  2. **Mutex-protected critical sections** – Ensures correctness but may introduce delays.
-  3. **Local variable storage for parallel computation** – Provides the best performance and scalability.
-- **Flexible Input:** Easily specify the range, number of threads, and synchronization method.
+---
 
-## How to Run
+## 🚀 Project Overview
 
-### Step 1: Compile the Program
+The Threads-Synchronization project is a high-performance C program designed to efficiently compute the sum of square roots within a specified range using multithreading. It demonstrates the power of concurrent programming by utilizing the PThread library to distribute tasks across multiple threads, improving performance while ensuring proper synchronization.
 
-Use the following command to compile the C code with the necessary libraries:
+## ✨ Features
+
+- **Multithreaded Execution:** Utilizes up to 32 threads for parallel computation.
+- **Flexible Range:** Supports computation for any range within [0, 9223372036854775807].
+- **Multiple Synchronization Methods:** Implements three distinct approaches:
+  1. 🚫 No synchronization (for demonstration purposes)
+  2. 🔒 Mutex-protected critical sections
+  3. 🏎️ Local computation with mutex-protected global sum update
+- **Performance Metrics:** Provides detailed timing information for analysis.
+- **Thread-specific Information:** Displays range and results for each thread.
+
+## 📋 Requirements
+
+- GCC Compiler
+- POSIX Threads (PThread) library
+- Math library
+
+## 🛠 Compilation
+
+Compile the program using the following command:
 
 ```bash
-gcc Code_#.c -o Code_#.o -lm -pthread
+gcc -o threads_sync threads_sync.c -lm -pthread
 ```
 
-This command includes the math (`-lm`) and pthread (`-pthread`) libraries needed for multithreading and square root calculations.
+This command includes the math (`-lm`) and pthread (`-pthread`) libraries required for the program.
 
-### Step 2: Execute the Program
+## 📖 Usage
 
-After compilation, run the program using the following command format:
+Run the compiled program with the following command:
 
 ```bash
-./Code_#.o <start_range> <end_range> <num_threads> <method>
+./threads_sync <a> <b> <num_threads> <method>
 ```
 
 Where:
-- `start_range`: The starting point of the range (e.g., 880130203012).
-- `end_range`: The ending point of the range (e.g., 922823372203).
-- `num_threads`: The number of threads to use (e.g., 1, 2, 4, etc.).
-- `method`: The synchronization method to use:
-  1. No synchronization (may result in inconsistent outputs due to race conditions).
-  2. Use of a mutex to protect critical sections (ensures correctness, but may lead to increased execution time).
-  3. Local computation per thread with a mutex-protected global sum update (best performance with accurate results).
+- `<a>`: Start of the range (must be ≥ 0)
+- `<b>`: End of the range (must be ≤ 9223372036854775807)
+- `<num_threads>`: Number of threads to use (1-32)
+- `<method>`: Synchronization method (1, 2, or 3)
 
-Example Usage:
-
+Example:
 ```bash
-./Code_#.o 880130203012 922823372203 4 3
+./threads_sync 1 1000000 4 3
 ```
 
-To measure execution time, you can use the Linux `time` command:
+This calculates the sum of square roots from 1 to 1,000,000 using 4 threads and method 3.
 
-```bash
-time ./Code_#.o 880130203012 922823372203 4 3
-```
+## 🔄 Synchronization Methods
 
-### Step 3: Analyze Results
+1. **No Synchronization (Method 1):**
+   - Demonstrates the risks of race conditions.
+   - Fastest but potentially inaccurate results.
 
-The program will output:
-- The computed sum of square roots.
-- Timing information including user time, system time, and total execution time.
+2. **Mutex-protected Critical Sections (Method 2):**
+   - Uses a mutex to protect each update to the global sum.
+   - Guarantees accuracy but may introduce significant overhead.
 
-This information can be used to compare the performance of the three different synchronization methods across various input parameters.
+3. **Local Computation with Protected Global Sum (Method 3):**
+   - Each thread computes a local sum, then updates the global sum once.
+   - Balances performance and accuracy.
 
-## Performance Insights
+## 📊 Performance Insights
 
-- **Method 1:** May result in incorrect results due to lack of synchronization. Avoid for critical computations.
-- **Method 2:** Ensures accuracy but sacrifices some performance due to thread blocking on mutex access.
-- **Method 3:** Achieves the best balance between performance and accuracy by allowing parallel computation before a synchronized final update.
+| Method | Performance | Accuracy | Use Case |
+|--------|-------------|----------|----------|
+| 1 | 🚀🚀🚀 | ❌ | Demonstration of race conditions |
+| 2 | 🚀 | ✅✅ | When absolute accuracy is critical |
+| 3 | 🚀🚀 | ✅ | Best balance of speed and accuracy |
 
-## Dependencies
+## ⚠️ Limitations
 
-- PThread Library: Required for handling multithreading.
-- Math Library: Required for square root calculations.
+- Maximum range: [0, 9223372036854775807]
+- Maximum number of threads: 32 (can be adjusted in the code)
+- Potential for floating-point precision issues with very large sums
 
-## Thank You!
+## 🤝 Contributing
 
-Thank you for trying out the Threads-Synchronization project! If you have any questions, suggestions, or improvements, feel free to reach out. We hope this project helps you gain a deeper understanding of threading and synchronization concepts in concurrent programming.
+Contributions to improve the project are welcome! Please follow these steps:
+
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<hr>
+
+<p align="center">
+  Made with ❤️ by your development team
+</p>
