@@ -118,5 +118,5 @@ Contributions to improve the project are welcome! Please follow these steps:
 <hr>
 
 <p align="center">
-  Made with ❤️ by your development team
+  Made with ❤️
 </p>
