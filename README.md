@@ -1,3 +1,5 @@
+
+---
 <h1 align="center">🧵 Threads-Synchronization</h1>
 
 <p align="center">
@@ -116,7 +118,3 @@ Contributions to improve the project are welcome! Please follow these steps:
 5. Open a Pull Request
 
 <hr>
-
-<p align="center">
-  Made with ❤️
-</p>
